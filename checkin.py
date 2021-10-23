@@ -33,8 +33,7 @@ def start():
         print(time)
         if sever == 'on' and mess != 'Please Try Tomorrow' and mess != 'Checkin! Get 1 day':
             requests.get('https://sc.ftqq.com/' + sckey + '.send?text='+mess+'，you have '+time+' days left')
-        else:
-            requests.get('https://sc.ftqq.com/' + sckey + '.send?text=cookie过期')
+        
             
     else:
         requests.get('https://sc.ftqq.com/' + sckey + '.send?text=cookie过期')
