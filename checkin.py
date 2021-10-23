@@ -30,7 +30,7 @@ def start():
         mess = checkin.json()['message']
 #         mess = 'Please Try Tomorrow'
  #       mess_ = 'Checkin! Get 1 day'
-        mess1 = str(len(mess))+mess
+        mess1 = 'yes'
        
         time = state.json()['data']['leftDays']
         time = time.split('.')[0]
@@ -38,7 +38,7 @@ def start():
         if sever == 'on' mess != 'Please Try Tomorrow' and mess != 'Checkin! Get 1 day':
             requests.get('https://sc.ftqq.com/' + sckey + '.send?text='+mess+'，you have '+time+' days left')
         else:
-            requests.get('https://sc.ftqq.com/' + sckey + '.send?text=yes')
+            requests.get('https://sc.ftqq.com/' + sckey + '.send?text='+mess1)
     else:
         requests.get('https://sc.ftqq.com/' + sckey + '.send?text=cookie过期')
 
