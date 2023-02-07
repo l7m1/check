@@ -43,5 +43,3 @@ def main_handler(event, context):
 
 if __name__ == '__main__':
     start()
-
-    
