@@ -7,8 +7,8 @@ sever = os.environ["SERVE"]
 # sckey = os.environ["SCKEY"]
 
 # 填入glados账号对应cookie
-COOKIES = os.environ["COOKIES"]
-cookies=COOKIES.split('&&')
+cookies = os.environ["COOKIES"]
+
 
 
 
