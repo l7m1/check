@@ -4,7 +4,7 @@ import requests,json,os
 sever = os.environ["SERVE"]
 
 # 填写pushplus的sckey,不开启推送则不用填
-sckey = os.environ["SCKEY"]
+# sckey = os.environ["SCKEY"]
 
 # 填入glados账号对应cookie
 COOKIES = os.environ["COOKIES"]
@@ -25,15 +25,15 @@ def start():
         checkin = requests.post(url,headers={'cookie': cookie ,'referer': referer,'origin':origin,'user-agent':useragent,'content-type':'application/json;charset=UTF-8'},data=json.dumps(payload))
         state =  requests.get(url2,headers={'cookie': cookie ,'referer': referer,'origin':origin,'user-agent':useragent})
     #--------------------------------------------------------------------------------------------------------#  
-        time = state.json()['data']['leftDays']
-        time = time.split('.')[0]
-        email = state.json()['data']['email']
-        if 'message' in checkin.text:
-            mess = checkin.json()['message']
-            if sever == 'on':
-                requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+mess+'&content='+email+' 剩余'+time+'天')
-        else:
-            requests.get('http://www.pushplus.plus/send?token=' + sckey + '&content='+email+'更新cookie')
+#         time = state.json()['data']['leftDays']
+#         time = time.split('.')[0]
+#         email = state.json()['data']['email']
+#         if 'message' in checkin.text:
+#             mess = checkin.json()['message']
+#             if sever == 'on':
+#                 requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+mess+'&content='+email+' 剩余'+time+'天')
+#         else:
+#             requests.get('http://www.pushplus.plus/send?token=' + sckey + '&content='+email+'更新cookie')
      #--------------------------------------------------------------------------------------------------------#   
 
 
